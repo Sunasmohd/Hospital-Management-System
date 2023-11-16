@@ -1,0 +1,21 @@
+.mnghosp-bt{
+    grid-area: bt;
+}
+
+.mnghosp-name{
+    grid-area: name;
+}
+
+.mnghosp-loc{
+    grid-area: loc;
+}
+
+.mnghosp-desc{
+    grid-area: desc;
+}
+
+.mnghosp-im{
+    grid-area: im;
+
+}
+

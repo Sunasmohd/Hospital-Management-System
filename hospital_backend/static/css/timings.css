@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: DM Sans;
+    
+}
+
+
+
+.container{
+    width: 60%;
+    margin-top: 110px;
+    border-radius: 4px;
+}
+form input,form select,form textarea{
+    width: 100%;
+    color: rgb(0, 0, 0);
+    background-color: rgb(232, 232, 232);
+    border: 1px solid rgba(251, 251, 251, 0.9);
+    height: 6vh;
+    width: 100%;
+    padding-left: 10px;
+    border-radius: 0px;
+    border-radius: 4px;
+}
+form textarea{
+    padding-top: 10px;
+}
+
+form label{
+    color: rgb(6, 6, 6);
+    padding-top: 8px;
+    padding-left: 2px;
+    font-family: Poppins;
+    font-size: 13px;
+    padding-top: 8px;
+    padding-left: 2px;
+}
+
+.form-container{
+    padding: 80px 50px 70px 50px;
+    display: grid;
+    grid-template-areas: 
+    'doc doc'
+    'time token'
+    'bt bt'
+
+    ;
+    column-gap: 35px;
+    row-gap: 30px;
+}
+
+.bt{
+    grid-area: bt;
+}
+.doc{
+    grid-area: doc;
+}
+
+.time{
+    grid-area: time;
+}
+.token{
+    grid-area: token;
+}
+
+
+
+
+.form-container button{
+    height: 40px;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    background-color: rgb(57, 147, 165);
+    border-radius: 0px;
+    border-radius: 4px;
+    margin: auto;
+    margin-bottom: 0;
+    border: 0;
+    width: 30%;
+}

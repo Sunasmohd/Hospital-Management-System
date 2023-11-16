@@ -1,0 +1,85 @@
+{% extends 'admin-navbar.html' %}
+<!-- {% load crispy_forms_tags %} -->
+
+
+{% block 'content' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/mngrdoc.css' %}">
+
+    
+        
+    <div class="row bg-dark">
+        <div class="container vh-100">
+            <form action="" method="POST" class="bg-light shadow text-dark rounded form-container" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!-- {{hosp}} -->
+       
+               <div class="form-group name">
+                   {{form.doc_name }}
+
+                <label for=""> {{form.doc_name.label }}</label>
+               </div>
+                <div class="form-group spec">
+                    {{form.doc_spec }} <br>
+                    
+                    <label for="">{{form.doc_spec.label }}</label>
+                </div>
+
+
+                
+                {% if action == 'update' %}
+                <div class="form-group hp">
+                    <select name="hospital" id="hospital">
+                        <option value="">---------</option>
+                        <option 
+                        {% if hosp %}
+                            selected
+                        {% endif %}
+                             value="{{hosp}}">{{hosp}}</option>       
+                        
+                            
+                    </select>
+                    <label for="">Hospital Name</label><br>
+
+                </div> <br>
+                {% else %}
+                <div class="form-group hp">
+                    <select name="hospital" id="hospital">
+                        <option value="">---------</option>
+                        {% for u in user_hospital %}
+                        <option value="{{u}}">{{u}}</option>       
+                        {% endfor %}
+                            
+                    </select>
+                    <label for="">Hospital Name</label><br>
+
+                </div> <br>
+                {% endif %}
+                    
+                <div class="form-group dp">
+                    
+                {{form.dept_name }} 
+                <label for="">{{form.dept_name.label }}</label><br>
+
+                </div>
+
+                <div class="form-group im">
+                    {{form.doc_img }} <br>
+                    <label for="">{{form.doc_img.label }}</label>          
+              
+                </div>                 
+
+                
+
+
+
+               <!-- {{form.user_id.as_hidden}} -->
+                <button class="bt">Save</button>
+
+
+            </form>
+        </div>
+    </div>
+
+{% endblock 'content' %}
+    

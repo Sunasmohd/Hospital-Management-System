@@ -1,0 +1,25 @@
+.deptt{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+form {
+    margin-top: 40px;
+    margin-left: 65px;
+}
+
+form input{
+    width: 20%;
+    padding-left: 5px;
+}
+
+@media(max-width:1100px){
+    .deptt{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width:900px){
+    .deptt{
+        grid-template-columns: 1fr;
+    }
+}

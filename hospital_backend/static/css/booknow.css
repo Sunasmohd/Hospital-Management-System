@@ -1,0 +1,91 @@
+.asteriskField {
+    display: none;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans';
+}
+
+
+
+
+
+
+.container{
+    background-color: white;
+    margin-top: 170px;
+    border-radius: 5px;
+    padding: 45px;
+    
+}
+
+label{
+    color: rgb(6, 6, 6);
+    padding-top: 8px;
+    padding-left: 2px;
+    font-weight: 600;
+
+    font-size: 13px;
+}
+
+select,.form-input,option,#tokenSelect,#timingSelect,#hospitalSelect,#doctorSelect{
+    color: rgb(0, 0, 0);
+    background-color: rgb(242, 242, 242);
+    border: 1px solid rgba(251, 251, 251, 0.9);
+    height: 6vh;
+    width: 100%;
+    padding-left: 10px;
+    border-radius: 0px;
+    border-radius: 4px;
+
+}
+
+.form-container{
+    display: grid;
+    grid-template-areas : 
+    'name name contact address'
+    'hosp hosp doc doc'
+    'timings timings tokens button'
+
+    ;
+    width: 100%;
+    column-gap: 20px;
+    row-gap: 30px;
+    
+}
+.form-container button{
+    height: 70px;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    background-color: rgb(57, 147, 165);
+    border-radius: 0px;
+    border-radius: 4px;
+
+}
+
+.name{
+    grid-area: name;
+}
+.contact{
+    grid-area: contact;
+}
+.address{
+    grid-area: address;
+}
+
+.hosp{
+    grid-area: hosp;
+}
+.doc{
+    grid-area: doc;
+}
+.timings{
+    grid-area: timings;
+}
+
+.tokens{
+    grid-area: tokens;
+}

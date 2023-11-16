@@ -1,0 +1,43 @@
+{% extends 'main-navbar.html' %}
+{% load static %}
+
+{% block 'bloc' %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  
+        <style>
+           .top-container{
+                background-image: linear-gradient(rgba(11, 10, 8, 0.7),rgba(11, 10, 8, 0.7)),url(" {% static 'images/hospital1.jpg' %} ");
+                background-size: cover;
+           }
+        </style>
+    </head>
+    <body>
+        {% load static %}
+        <div class="main">
+            <div class="top-container">
+                <div class="showcase">
+                   <div class="ins">
+                     <h1>100+ Expert Doctors</h1>
+                        <a href="{% url 'myapp_book' %}" 
+                        
+                        class="btn">Book Now</a>
+                        <img src="" alt="" srcset="">
+                   </div>
+                </div>
+            </div>
+        </div>
+        {% include 'contact.html' %}
+        {% include 'footer.html' %}
+
+
+    </body>
+    </html>
+{% endblock 'bloc' %}
+    

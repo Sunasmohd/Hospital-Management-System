@@ -1,0 +1,73 @@
+{% extends 'admin-navbar.html' %}
+
+
+{% block 'content' %}
+<div class="container-fluid">
+    
+    {% include 'status_row.html' %}
+
+    <div class="row">
+        <div class="col-md-5">
+            <h5>ADMIN/MANAGER/USER DETAILS</h5>
+            <hr>
+            <div class="card card-body">
+                <table class="table table-sm">
+                    <tr>
+                        <th>View</th>
+                        <th>Users Name</th>
+                        <th>Users Group</th>
+
+                    </tr>
+                    {% for user in users %}
+                        <tr>
+                            <td><a class="badge bg-primary" href="{% url 'user_app' user.id %}">View</a></td>
+                            <td>{{user.username}}</td>
+                            
+                                <td>{{user.groups.get}}</td>
+                       
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+        </div>
+    
+        <div class="col-md-7">
+            <h5>PATIENT BOOKING DETAILS</h5>
+            <hr> 
+         
+                
+            <div class="card card-body">
+               
+                <table class="table table-sm">
+                    <tr>
+                        <th>User</th>
+                        <th>Patient</th>
+                        <th>Doctor</th>
+                        <th>Hospital</th>
+                        <th>Date Booked</th>
+                        <th>View</th>
+                        <th>Update</th>
+                        <th>Remove</th>
+                    </tr>
+                    {% for patient in patients %}
+                        <tr>
+                            <td>{{patient.user_id}}</td>
+                            <td>{{patient.p_name}}</td>
+                            <td>{{patient.doc_name}}</td>
+                            <td>{{patient.hosp_name}}</td> 
+                            <td>{{patient.date}}</td>
+                            <td><a class="badge bg-primary text-light m-1" href="{% url 'patient_app' patient.id %}">View</a></td>
+                            <td><a class="badge bg-warning text-light m-1" href="{% url 'update_app' patient.id patient.hosp_name_id %}">Update</a></td>
+                            <td><a class="badge bg-danger text-light m-1" href="{% url 'delete_app' patient.id %}">Delete</a></td>
+                            
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    
+    </div>
+</div>
+{% endblock 'content' %}
+    

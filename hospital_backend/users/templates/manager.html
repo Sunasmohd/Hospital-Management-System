@@ -1,0 +1,112 @@
+{% extends 'admin-navbar.html' %}
+
+
+{% block 'content' %}
+
+
+<div class="container-fluid">
+
+    {% include 'status_row2.html' %}
+
+    <div class="row mt-3">
+        <div class="col-md-5 py-2">
+            <h5>MANAGER DETAILS</h5>
+            <hr>
+            <div class="card card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Hospital</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+    
+                                {% for h in user_hospital %}
+    
+                                <tr>
+                                    <td><a href="{% url 'myapp_hospitald' h.id %}">{{h}}</a></td>
+                                </tr>
+    
+                                {% endfor %}
+    
+                            </tbody>
+                        </table>
+    
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table">
+                            <thead>
+                                <tr class="">
+                                    <th class="d-flex justify-content-between">Doctors <a  href="{% url 'manager_app3' %}">Add Doctors +</a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+    
+                                {% for d in user_doctor %}
+    
+                                <tr>
+                                    <td><a href="{% url 'myapp_doctord' d.id %}">{{d}}</a></td>
+                                </tr>
+    
+                                {% endfor %}
+    
+                            </tbody>
+                        </table>
+    
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="col-md-7 py-2">
+            <h5>PATIENT BOOKING DETAILS</h5>
+            <hr>
+
+
+            <div class="card card-body">
+
+                <table class="table table-sm">
+                    <tr>
+                        <th>Patient</th>
+                        <th>Doctor</th>
+                        <th>Hospital</th>
+                        <th>Status</th>
+                        <th>Approve</th>
+                        <th>View</th>
+
+                        <th>Update</th>
+                        <th>Remove</th>
+
+                    </tr>
+
+
+                    {% for d in user_display3 %}
+
+                    {% for i in d %}
+                    <tr>
+                        <td>{{i.p_name}}</td>
+                        <td>{{i.doc_name}}</td>
+                        <td>{{i.hosp_name}}</td>
+                         <td>{{i.is_saved}}</td>
+                        <td ><a class="badge bg-success text-light m-1" href="{% url 'approve_app' i.id %}">Approve</a></td>
+                        <td ><a class="badge bg-primary text-light m-1" href="{% url 'patient_app' i.id %}">View</a></td>
+                        
+                        <td><a class="badge bg-warning text-light m-1" href="{% url 'update_app' i.id i.hosp_name_id %}">Update</a>
+                        </td>
+                        <td><a class="badge bg-danger text-light m-1" href="{% url 'delete_app' i.id %}">Delete</a></td>
+
+                    </tr>
+                    {% endfor %}
+
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock 'content' %}

@@ -1,0 +1,86 @@
+{% extends 'admin-navbar.html' %}
+{% load static %}
+
+{% block 'content' %}
+<link rel="stylesheet" href="{% static 'css/timings.css' %}">
+    <div class="row bg-dark ">
+        <div class="container  vh-100">
+            <form action="" method="POST" class="bg-light p-5 form-container">
+                {% csrf_token %}
+                
+            
+            {% if action == 'update' %}
+                    <div class="form-group doc">
+                            
+                        <select name="DocSelect" id="">
+                            <option value="">---Select---</option>
+            
+                            <option value="{{doc.id}}">{{doc}}</option>
+
+
+                        </select><br>
+                        
+                    <label for="">Doctor</label>
+                </div>
+
+                <div class="form-group time">
+                
+                    <select name="TimingSelect" id="">
+                        <option value="">---Select---</option>
+        
+                        
+                        {% for a in ac %}
+                            <option value="{{a.0}}">{{a.1}}</option>
+                        {% endfor %}
+                            
+
+                    </select><br>
+                    
+                <label for="">Timing</label>
+
+                </div>
+            {% else %}
+            <div class="form-group doc">
+                    
+                <select name="DocSelect" id="">
+                    <option value="">---Select---</option>
+      
+                    <option value="{{doc.id}}">{{doc}}</option>
+
+
+                </select><br>
+                
+            <label for="">Doctor</label>
+        </div>
+
+        <div class="form-group time">
+           
+            <select name="TimingSelect" id="">
+                <option value="">---Select---</option>
+  
+                
+                {% for a in ac %}
+                    <option value="{{a.0}}">{{a.1}}</option>
+                {% endfor %}
+                    
+
+            </select><br>
+            
+        <label for="">Timing</label>
+
+        </div>
+
+            {% endif %}
+                
+        
+                <div class="form-group token">
+                    {{form.token}} <br>
+                    <label for="">{{form.token.label}}</label>
+                </div>
+        
+                <button class="btn bt">Save</button>
+            </form>
+        </div>
+    </div>
+{% endblock 'content' %}
+    

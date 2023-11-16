@@ -1,0 +1,240 @@
+:root {
+    --primary: #ddd;
+    --dark: black;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans';
+
+}
+
+
+.navbar {
+    display: grid;
+    grid-template-columns: 3fr 3fr 0.7fr;
+    background-color: transparent;
+    padding: 30px 10px 10px 10px;
+    justify-items: start;
+}
+
+.logo {
+    padding: 6px 10px 0px 20px;
+    font-family: 'Gilda Display';
+}
+
+.logo a {
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    font-size: 14px;
+}
+
+li {
+    padding: 15px;
+
+}
+
+.usr {
+    color: black;
+    background-color: aqua;
+}
+
+.subnav a {
+    color: black;
+    text-transform: uppercase;
+}
+
+.log .fff {
+    color: black;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+
+.abc ul li a {
+    border: 1px solid black;
+    padding: 5px 8px;
+    color: rgb(0, 0, 0);
+}
+
+
+
+
+
+.subnav a:hover {
+    color: rgb(187, 187, 187);
+}
+
+
+.log .fff span {
+    color: rgb(201, 31, 31);
+}
+
+.main-log .minn {
+    display: none;
+}
+
+.log .fff {
+    padding-right: 25px;
+}
+
+.sub ul li a {
+    display: none;
+}
+
+.sub .bb i {
+    display: block;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+
+}
+
+.log .bb {
+    display: block;
+    color: black;
+    font-size: 20px;
+}
+
+
+@media(max-width:800px) {
+
+    .main-log .minn {
+        display: block;
+    }
+
+    .sub .bb i {
+        display: none;
+    }
+
+    .sub .cc {
+        display: block;
+        padding: 5px 8px;
+
+    }
+
+    .log a {
+        display: grid;
+        color: white;
+        font-size: 13px;
+    }
+
+    .logo a {
+        font-size: 14px;
+    }
+
+    .subnav li {
+        font-size: 13px;
+    }
+
+    .showcase h1 {
+        font-size: 2.4rem;
+    }
+
+    .showcase a {
+        margin-left: 135px;
+    }
+
+    .log ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .log a,
+    .log .cc {
+        border: 0;
+        color: white;
+        /* padding: 0px; */
+        font-size: 12px;
+    }
+
+    .log a i {
+        color: white;
+        padding: 0px;
+        font-size: 15px;
+    }
+
+    .log a:hover {
+        color: white;
+        font-weight: 400;
+
+        background-color: transparent;
+    }
+
+    .log li {
+        padding: 5px;
+    }
+
+    .log {
+        background-color: rgb(25, 24, 24);
+        position: absolute;
+        top: 0;
+        right: -150px;
+
+        display: none;
+        padding: 10px 0px;
+        height: 90vh;
+        width: 150px;
+        transition: 1s;
+    }
+
+    .log ul {
+        padding: 25px 8px;
+        text-align: left;
+    }
+
+    .log .cc::after {
+        margin-top: 3px;
+        content: '';
+        height: 2px;
+        width: 0%;
+        background: rgb(230, 230, 230);
+        transition: 0.5s;
+        display: block;
+    }
+
+    .log a:hover::after {
+        width: 100%;
+    }
+
+    .main-log i {
+        display: block;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-left: 20px;
+        cursor: pointer;
+        color: black;
+
+    }
+
+    .log .fff {
+        color: white;
+        padding: 0px 0px 25px 12px;
+    }
+
+    .log .fff span {
+        color: rgb(201, 31, 31);
+    }
+
+    .log .aaaa {
+        color: white;
+    }
+
+
+
+
+}

@@ -1,0 +1,27 @@
+
+.home-btn-main{
+    color: white;
+    font-family : Rubik;
+    padding: 5px 15px;
+    margin-top:10px;
+    background-color: rgb(16, 16, 16);
+    border-radius:15px;
+    font-size:14px;
+} 
+
+.Div{
+    text-align:center;
+}
+
+@media(max-width:430px){
+    .home-btn-main{
+        font-size:10px;
+        
+    }
+}
+@media(max-width:350px){
+    .home-btn-main{
+        font-size:7px;
+        
+    }
+  }

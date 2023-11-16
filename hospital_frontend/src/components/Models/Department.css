@@ -1,0 +1,24 @@
+.dept-grid-div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 80px;
+    justify-items: center;
+}
+
+@media screen and (max-width:950px) {
+    .dept-grid-div{ 
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+    
+}
+
+@media screen and (max-width:650px) {
+    .dept-grid-div{ 
+
+        grid-template-columns: 1fr;
+
+    }
+    
+}

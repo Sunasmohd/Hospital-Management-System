@@ -1,0 +1,40 @@
+.reg-username{
+    grid-area: username;
+}
+
+.reg-email{
+    grid-area: email;
+}
+
+.reg-p1{
+    grid-area: p1;
+}
+
+.reg-p2{
+    grid-area: p2;
+}
+
+.reg-bt{
+    grid-area: bt;
+    margin: auto;
+    width: 40%;
+}
+
+.reg-al{
+    grid-area: al;
+    margin: auto;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+@media(max-width:800px){
+    
+
+    .reg-bt{
+        width: 100%;
+    }
+    
+   
+    
+    
+}

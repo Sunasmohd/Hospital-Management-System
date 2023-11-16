@@ -1,0 +1,32 @@
+.book-name{
+    grid-area: name;
+}
+
+.book-contact{
+    grid-area: contact;
+}
+
+.book-address{
+    grid-area: address;
+}
+
+.book-hosp{
+    grid-area: hosp;
+}
+
+.book-doc{
+    grid-area: doc;
+}
+
+.book-timings{
+    grid-area: timings;
+}
+
+.book-tokens{
+    grid-area: tokens;
+}
+
+.book-button{
+    grid-area: button;
+}
+

@@ -1,0 +1,25 @@
+.mngdoc-bt{
+    grid-area: bt;
+}
+
+.mngdoc-name{
+    grid-area: name;
+}
+
+.mngdoc-spec{
+    grid-area: spec;
+}
+
+.mngdoc-hp{
+    grid-area: hp;
+}
+
+.mngdoc-dp{
+    grid-area: dp;
+}
+
+.mngdoc-im{
+    grid-area: im;
+
+}
+

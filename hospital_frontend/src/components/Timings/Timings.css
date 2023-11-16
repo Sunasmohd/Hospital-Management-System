@@ -1,0 +1,19 @@
+
+
+.tkn-bt{
+    grid-area: bt;
+}
+.tkn-doc{
+    grid-area: doc;
+}
+
+.tkn-time{
+    grid-area: time;
+}
+.tkn-token{
+    grid-area: token;
+}
+
+
+
+

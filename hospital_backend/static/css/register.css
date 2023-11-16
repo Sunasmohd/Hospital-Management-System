@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: DM Sans;
+    
+}
+
+body{
+    background-image: linear-gradient(rgba(38, 37, 37, 0.218),rgba(11, 10, 8, 0.7)),url("../images/h8.jpg");
+    background-size: cover;
+}
+
+
+.container{
+    width: 60%;
+    background-color: white;
+    margin-top: 170px;
+    border-radius: 4px;
+}
+form input{
+    width: 100%;
+    color: rgb(0, 0, 0);
+    background-color: rgb(242, 242, 242);
+    border: 1px solid rgba(251, 251, 251, 0.9);
+    height: 6vh;
+    width: 100%;
+    padding-left: 10px;
+    border-radius: 0px;
+    border-radius: 4px;
+}
+
+form label{
+    color: rgb(6, 6, 6);
+    padding-top: 8px;
+    padding-left: 2px;
+    font-family: Poppins;
+    font-size: 13px;
+    padding-top: 8px;
+    padding-left: 2px;
+}
+
+.form-container{
+    display: grid;
+    grid-template-areas: 
+    'username email'
+    'p1 p2'
+    'bt bt'
+    'al al'
+    ;
+    column-gap: 35px;
+    row-gap: 30px;
+    padding: 45px 40px 0px 40px;
+}
+
+.username{
+    grid-area: username;
+}
+
+.email{
+    grid-area: email;
+}
+.p1{
+    grid-area: p1;
+}
+
+.p2{
+    grid-area: p2;
+}
+.bt{
+    grid-area: bt;
+    margin: auto;
+    width: 30%;
+}
+
+.al{
+    grid-area: al;
+    margin: auto;
+    width: 30%;
+}
+
+.form-container button{
+    height: 70px;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    background-color: rgb(57, 147, 165);
+    border-radius: 0px;
+    border-radius: 4px;
+
+}

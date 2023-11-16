@@ -1,0 +1,118 @@
+
+
+.main-hospital-detail-container{
+    padding-top:60px;
+    
+  }
+  
+  .hospital-info{
+    font-size: 1.5rem;
+    padding-top: 1rem;
+  }
+  .hospital-location{
+    margin: .5rem;
+  }
+  
+  .hospital-location-text{
+    font-size: 1rem;
+    color: black;
+  }
+  
+  .hospital-location-text-2{
+    font-size: .9rem;
+  }
+  
+  .hospital-email-text{
+    margin: .5rem;
+    font-size: 1rem;
+    color: black;
+  }
+  .hospital-email-text-2{
+    margin: .5rem;
+    font-size: 1rem;
+    color: gray;
+  }
+  .hospital-phone-text{
+    margin: .5rem;
+    font-size: 1rem;
+    color: black(0, 0, 0);
+  }
+  .hospital-phone-text-2{
+    margin: .5rem;
+    font-size: 1rem;
+    color: gray;
+  }
+  .hospital-contact{
+    margin: .5rem;
+    color: black;
+  
+  }
+  
+  .doctor-name{
+    color: black;
+  }
+  
+  .hospital-doctor-container{
+    display: flex;
+  }
+  
+  @media screen and (max-width:450px){
+    .hospital-doctor-container{
+      display: block;
+    }
+  }
+
+  .doctor-hospital{
+    margin: .5rem;
+    font-size: 1rem;
+    color: black;
+  }
+
+  .doctor-department{
+    margin: .5rem;
+    font-size: 1rem;
+    color: black;
+  }
+
+  .doctor-hospital{
+    margin: .5rem;
+    font-size: 1rem;
+    color: gray;
+  }
+
+  .doctor-department{
+    margin: .5rem;
+    font-size: 1rem;
+    color: gray;
+  }
+
+  .available-doctors{
+    padding-left: .5rem;
+  }
+
+  .model-detail-information-container{
+    padding-left: 2rem;
+  }
+
+  @media screen and (max-width:800px){
+    .hospital-email-text{
+      margin: .5rem;
+      font-size: 1rem;
+      color: black;
+    }
+    .hospital-email-text-2{
+      margin: .5rem;
+      font-size: 1rem;
+      color: gray;
+    }
+    .hospital-phone-text{
+      margin: .5rem;
+      font-size: 1rem;
+      color: black(0, 0, 0);
+    }
+    .hospital-phone-text-2{
+      margin: .5rem;
+      font-size: 1rem;
+      color: gray;
+    }
+  }

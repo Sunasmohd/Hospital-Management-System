@@ -1,0 +1,61 @@
+{% extends 'admin-navbar.html' %}
+{% block 'content' %}
+{% load widget_tweaks %}
+
+
+<br>
+<div class="row p-3">
+	<div class="col-md px-5">
+		<div class="card card-body">
+			<h5>Patient Name</h5>
+			<hr>
+			<h3 class="text-uppercase">{{patient.p_name}}</h3>
+		</div>
+	</div>
+
+	<div class="col-md px-5">
+		<div class="card card-body">
+			<h5>Contact Information</h5>
+			<hr>
+			<p><span style="font-weight: bold;">Address :</span>  {{patient.p_address}}</p>
+			<p><span style="font-weight: bold;">Phone :  </span>{{patient.p_phno}}</p>
+		</div>
+		
+	</div>
+
+	
+</div>
+
+
+<br>
+
+<div class="row px-5">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Hospital</th>
+					<th>Doctor</th>
+					<th>Date Booked</th>
+					<th>Status</th>
+					<th>Update</th>
+					<th>Remove</th>
+				</tr>
+
+					
+					<tr>
+						<td>{{patient.hosp_name}}</td>
+						<td>{{patient.doc_name}}</td>
+						<td>{{patient.booked_on}}</td>
+						<td>{{patient.is_saved}}</td>
+						<td><a class="btn btn-sm btn-info" href="{% url 'update_app' patient.id patient.hosp_name_id  %}">Update</a></td>
+						<td><a class="btn btn-sm btn-danger" href="{% url 'delete_app' patient.id %}">Cancel</a></td>
+					</tr>
+						
+
+			</table>
+		</div>
+	</div>
+</div>
+	
+{% endblock 'content' %}

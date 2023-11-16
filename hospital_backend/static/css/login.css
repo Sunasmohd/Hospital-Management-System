@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: DM Sans;
+}
+
+body{
+    background-image: linear-gradient(rgba(38, 37, 37, 0.218),rgba(11, 10, 8, 0.7)),url("../images/hospital3.jpg");
+    background-size: cover;
+}
+
+
+.container{
+    width: 40%;
+    background-color: white;
+    margin-top: 170px;
+    border-radius: 4px;
+}
+
+.form-container{
+    padding: 30px 40px 40px 40px;
+}
+
+form input{
+    color: rgb(0, 0, 0);
+    background-color: rgb(242, 242, 242);
+    border: 1px solid rgba(251, 251, 251, 0.9);
+    height: 6vh;
+    width: 100%;
+    padding-left: 10px;
+    border-radius: 0px;
+    border-radius: 4px;
+}
+
+form label{
+    font-size: 13px;
+    font-family: Poppins;
+    margin-bottom: 4px;
+    margin-top: 5px;
+    margin-left: 2px;
+}

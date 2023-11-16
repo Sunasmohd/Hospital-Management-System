@@ -1,0 +1,50 @@
+{% extends 'admin-navbar.html' %}
+
+{% load static %}
+
+
+{% block 'content' %}
+    
+<link rel="stylesheet" href="{% static 'css/hospitals.css' %}">
+
+
+<body>
+   
+   
+    
+
+    
+<form action="" method="get">
+    <input type="text" name="q" id="" placeholder="Search">
+</form>
+
+<div class="hos m-3">
+
+    {% for h in hospital %}
+        <div class="card m-5" style="width: 18rem;">
+        <a href="{% url 'myapp_hospitald' h.id %}" class="text-dark">
+ 
+            <img class="card-img-top" src="{{h.hosp_img.url}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{h.hosp_name}}</h5>
+                
+                <p class="loc card-text">{{h.hosp_loc}}</p><hr>
+                <p class="card-text">{{h.hosp_desc}}</p>
+                
+                                       
+               
+               
+                
+            </div>
+    </a>
+ 
+        </div>
+    {% endfor %}
+ 
+ </div>
+ 
+ 
+
+</body>
+{% endblock 'content' %}
+    

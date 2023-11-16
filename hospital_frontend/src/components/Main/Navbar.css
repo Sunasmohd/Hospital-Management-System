@@ -1,0 +1,194 @@
+
+.nav-main{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    font-size: .9rem;
+    color: gray;
+    position: fixed;
+    z-index: 100;
+    width: 100vw;
+    background: white;
+    padding-right: 10px;
+}
+
+.nav-main a{
+    color: black;
+}
+
+.nav-mobile-section {
+    display:none;
+}
+
+.nav-first-section h1{
+    font-family: Gilda Display;
+    flex: 1;
+    margin:1rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: black;
+    margin-right: 2rem;
+}
+
+.nav-second-section{
+    flex: 4;
+    margin-left:20px;
+}
+.nav-second-section ul{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    justify-content: space-between;
+    height:100%;
+}
+.nav-third-section{
+    flex:3;
+    flex-shrink: 0;
+}
+.nav-third-section ul{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+
+}
+
+.nav-third-section ul li{
+    margin-inline: .5rem;
+
+}
+
+.option-container{
+    display: none;
+}
+
+.login-nav{
+    transition: .5s;
+    padding: .3rem .7rem ;
+
+    border: 1px solid lightgray;
+    color: black;
+    border-radius: 10px;
+}
+
+.login-nav:hover{
+    background: rgb(198, 198, 198);
+}
+
+
+
+.signup-nav{
+    background: black;
+    color: white;
+    border-radius: 10px;
+    padding: .3rem .7rem ;
+    transition: .5s background;
+}
+
+.signup-nav a{
+    color: white;
+}
+
+
+.signup-nav:hover{
+    background: rgb(33, 33, 33);
+}
+
+@media screen and (max-width:950px) {
+    .option-container{
+        position: relative;
+    }
+    
+    .nav-mobile-section{
+        display:block;
+        
+        height: 100px;
+        padding: 0;
+        margin: 0;
+    }
+    .nav-mobile-section :nth-child(1){
+        margin-top: .25rem;
+    }
+
+    .nav-second-section{
+        display: none;
+    }
+
+    .nav-third-section{
+        display: none;
+    }
+
+    .nav-mobile-option-section{
+        background-color: white;
+        border-radius: 10px;
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        padding: 0;
+    }
+    .nav-mobile-option-section ul{
+        margin: 0;
+        padding: 0;
+    }
+    .nav-mobile-option-section ul li {
+        text-align: center;
+        padding-block: .6rem;
+        border-bottom: 1px solid lightgray;
+    }
+    .nav-mobile-option-section ul li a {
+        color: black;
+    }
+
+    .nav-mobile-option-section .login-nav{
+        transition: .5s;
+    }
+
+    .nav-mobile-option-section .login-nav:hover{
+        background: rgb(198, 198, 198);
+    }
+
+    .nav-mobile-option-section .signup-nav a{
+        background: black;
+        color: white;
+        transition: .5s background;
+    }
+
+    .nav-mobile-option-section .signup-nav:hover{
+        background: rgb(33, 33, 33);
+    }
+
+    /* Define your animation */
+    @keyframes slideOut {
+        from {
+            display: block;
+            left: 0;
+        }
+        to {
+            left: 2000px;
+            display: none;
+        }
+    }
+    @keyframes slideIn {
+        from {
+            left: 2000px;
+        }
+        to {
+            left: 0;
+        }
+    }
+    
+    /* Apply the animation class */
+    .close {
+
+        animation: slideOut 1.5s forwards;
+    }
+    
+    /* Hide the element after animation */
+    .open {
+        display: block;
+        animation: slideIn .5s forwards;
+    }
+  
+}

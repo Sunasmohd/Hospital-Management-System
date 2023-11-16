@@ -1,0 +1,30 @@
+{% extends 'admin-navbar.html' %}
+{% load static %}
+
+
+{% block 'content' %}
+<link rel="stylesheet" href="{% static 'css/departments.css' %}">
+
+<body>
+    <form action="" method="get">
+        <input type="text" name="q" id="" placeholder="Search">
+    </form>
+   <div class="deptt m-3">
+     
+    {% for dt in dept %}
+    <div class="card m-5">
+    <a href="{% url 'myapp_deptd' dt.id %}" class="text-dark">
+
+        <div class="card-body">
+            <h4 class="card-title">{{dt.name}}</h4>
+
+            <p class="card-text">{{dt.description}}</p>
+
+        </div>
+    </a>
+    </div>
+    {% endfor %}
+        
+   </div>
+</body>
+{% endblock 'content' %}

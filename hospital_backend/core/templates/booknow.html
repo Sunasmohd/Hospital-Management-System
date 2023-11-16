@@ -1,0 +1,267 @@
+{% load crispy_forms_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400;1,500&family=Gilda+Display&family=Poppins:ital,wght@0,200;0,300;0,500;0,600;0,700;1,200;1,300;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/booknow.css' %}">
+    <style>
+        body{
+            width: 100%;
+            background-image: linear-gradient(rgba(38, 37, 37, 0.218),rgba(11, 10, 8, 0.7)),url(" {% static 'images/h5.jpg' %} ");
+            background-size: cover;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                <form id="formAdd" action="" method="POST" class="">
+                    {% csrf_token %}
+                    <div class="">
+                        <div class="col-3 form-container">
+                            <div class="form-group name">
+                                {{ form.p_name }}
+                                <label for="">{{form.p_name.label  | upper }}</label>
+
+                            </div>
+                            <div class="form-group phone">
+
+                                {{form.p_phno}}
+                                <label for="">{{form.p_phno.label  | upper }}</label>
+
+                            </div>
+                            <div class="form-group address">
+
+                                {{form.p_address}}
+                                <label for="">{{form.p_address.label  | upper }}</label>
+
+                            </div>
+
+                            {% if action == 'update' %}
+                            <div class="form-group validate hosp">
+                                <select name="hospitalSelect" id="hospitalSelect" class="form-control">
+                                    <option value="">Select Hospital</option>
+       
+                                    <option value="{{ hosp.id }}" 
+                                    {% if hosp.id == selected_hosp %} selected {% endif %}>
+                                    {{ hosp }}</option>
+                        
+                                </select>
+                                <label for="">HOSPITALS</label>
+
+                            </div>
+                            <div class="form-group validate doc">
+                                <select name="doctorSelect" id="doctorSelect" class="form-control">
+                                    <option class="" id="selectdoc" value="">Select Doctor</option>
+                    
+                                    {% for d in doc %}
+
+
+
+                                    <option value="{{ d.id }}" {% if d.id == selected_doc %} selected{% endif %}>
+                                        {{d.doc_name}}</option>
+
+
+
+                                    {% endfor %}
+                                </select>
+                                <label for="">DOCTORS</label>
+
+                            </div>
+
+                                <div class="form-group validate timings">
+                                    <select name="timingSelect" id="timingSelect" class="form-control">
+                                    <option class="" id="selecttiming" value="">Select Date</option>
+                                    <option value="{{ time.id }}" 
+                                        {% if time.id  %} selected {% endif %}>
+                                        {{ time }}
+                                    </option>
+                                    </select>
+                                    <label for="">TIMINGS</label>
+    
+                                </div>
+
+                                <div class="form-group validate tokens">
+                                    <select name="tokenSelect" id="tokenSelect" class="form-control">
+                                    <option class="" id="selecttoken" value="">Select Token</option>
+                                    
+                                    {% for toke in token_list  %}
+                                    <option value="{{ toke }}" 
+                                        {% if toke == selected_token %} selected {% endif %}>
+                                        {{ toke }}
+                                    </option>
+                                    {% endfor %}
+                                        
+                                    </select>
+                                    <label for="">TOKENS</label>
+    
+                                </div>
+
+                            {% else %}
+                            <div class="form-group validate hosp">
+                                <select name="hospitalSelect" id="hospitalSelect" class="form-control">
+                                    <option value="">Select Hospital</option>
+                                    {% for h in hosp %}
+                                    <option value="{{ h.id }}">{{ h.hosp_name }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="">HOSPITALS</label>
+
+                            </div>
+                            <div class="form-group validate doc">
+                                <select name="doctorSelect" id="doctorSelect" class="form-control">
+                                    <option class="" id="selectdoc" value="">Select Doctor</option>
+                                </select>
+                                <label for="">DOCTORS</label>
+
+                            </div>
+
+
+                        
+
+                            <div class="form-group validate timings">
+                                <select name="timingSelect" id="timingSelect" class="form-control">
+                                    <option class="" id="selecttiming" value="">Select Date</option>
+                                </select>
+                                <label for="">TIMINGS</label>
+
+                            </div>
+
+
+                            <div class="form-group validate tokens">
+                                <select name="tokenSelect" id="tokenSelect" class="form-control">
+                                    <option class="" id="selecttoken" value="">Select Token</option>
+                                    
+                                </select>
+                                <label for="">TOKENS</label>
+
+                            </div>
+                            {% endif %}
+                            
+                            <div class="form-group ">
+                                <button
+                                    class="form-control pl-5 pr-5 ">Save</button>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const hospitalSelect = document.querySelector('#hospitalSelect')
+        const doctorList = document.querySelector('#doctorSelect')
+        const docSel = document.querySelector('#selectdoc')
+        const timSel = document.querySelector('#selecttiming')
+        const tokSel = document.querySelector('#selecttoken')
+
+        const tokenList = document.querySelector('#tokenSelect')
+        const timingList = document.querySelector('#timingSelect')
+
+
+        hospitalSelect.addEventListener('change', event => {
+            const hospitalId = event.target.value;
+
+            fetch(`/book_now/${hospitalId}`)
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    doctorList.innerHTML = '';
+                    doctorList.appendChild(docSel)
+                    data.doctors.forEach(doctor => {
+                        console.log(doctor)
+                        const option = document.createElement('option');
+                        option.value = doctor.id;
+                        option.textContent = `${doctor.doc_name}`;
+                        doctorList.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error(error, 'This is an error');
+                });
+        });
+
+
+        doctorList.addEventListener('change',event => {
+            const doctorId = event.target.value
+
+            fetch(`/book_now/timing/${doctorId}`)
+            .then((res)=>res.json())
+            .then((data)=>{
+                console.log(data)
+                timingList.innerHTML = ''
+                timingList.append(timSel)
+                data.timings.forEach((timing)=>{
+                    
+                    const option = document.createElement('option');
+                    option.value = timing.id;
+                    option.textContent = `${timing.name}`;
+                    timingList.appendChild(option);
+                    
+                })
+            })
+        })
+
+        timingList.addEventListener('change',event => {
+            const time = event.target.value
+
+            fetch(`/book_now/tok/${time}`)
+            .then((res)=>res.json())
+            .then((data)=>{
+                console.log(data['tokens'].length)
+                tokenList.innerHTML = ''
+                
+                if(data['tokens'].length == 0){
+                    
+                    const option = document.createElement('option');
+                    option.value = 'Sorry, Tokens are over..!!';
+                    option.textContent = 'Sorry, Tokens are over..!!';
+                    tokenList.appendChild(option);
+                }else{
+                    tokenList.append(tokSel)
+
+                    data.tokens.forEach((token)=>{
+                    
+                        const option = document.createElement('option');
+                        option.value = token.id;
+                        option.textContent = `${token.id}`;
+                        tokenList.appendChild(option);
+                        
+                    })
+                }
+            })
+        })
+
+       
+    </script>
+
+
+
+</body>
+
+</html>
