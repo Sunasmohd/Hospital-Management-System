@@ -10,7 +10,7 @@ const Navbar = () => {
     <>
       <section className="nav-main">
         <section className="nav-first-section">
-            <h1>DOCBOOK</h1>
+            <Link to='/'><h1>DOCBOOK</h1></Link>
         </section>
         <section className="nav-second-section">
             <ul>
